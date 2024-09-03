@@ -8,13 +8,13 @@
     </div>
     <div class="item-footer">
         <h3>Nous contacter</h3>
-        <p><a href="/wordpress/contact/">contact</a></p>
+        <p><a href="https://lovely-nails-by-prisci.fr/contact/">contact</a></p>
         <p>06 72 52 68 31</p>
     </div>
     <div class="item-footer">
         <h3>Informations</h3>
-        <p><a href="/wordpress/mentions-legales/">Mentions légales</a></p>
-        <p><a href="/wordpress/plan-du-site/">Plan du site</a></p>
+        <p><a href="https://lovely-nails-by-prisci.fr/mentions-legales/">Mentions légales</a></p>
+        <p><a href="https://lovely-nails-by-prisci.fr/plan-du-site/">Plan du site</a></p>
     </div>
 </footer>
 <div class="copyright">

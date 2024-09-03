@@ -5,3 +5,303 @@ Author URI: https://alexis-delaunay.fr/
 Description: Thème custom pour le site web lovely nail's by prisci.
 Version: 1.0
 */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+:root {
+  --black: #322b25;
+  --grey: #797979;
+  --red: #743222;
+}
+a {
+  text-decoration: none;
+}
+img {
+  user-select: none;
+}
+header {
+  display: flex;
+  padding: 0 2rem;
+  padding-top: 5px;
+  align-items: center;
+  box-shadow: -2px 7px 38px 0 rgba(0, 0, 0, 0.21);
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+header figure {
+  min-width: 90px;
+  flex-grow: 1;
+  z-index: 99;
+}
+header figure #logo {
+  height: 65px;
+  width: 65px;
+  user-select: none;
+}
+header .menu {
+  display: flex;
+  align-items: center;
+}
+header .menu nav ul {
+  display: flex;
+  position: relative;
+}
+header .menu nav ul li {
+  list-style: none;
+  padding: 0 8px;
+  cursor: pointer;
+  position: relative;
+}
+header .menu nav ul li.current_page_item::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transform-origin: bottom;
+  transform: scaleX(1);
+  background: var(--black);
+  z-index: 2;
+}
+header .menu nav ul li.current_page_item a {
+  color: var(--black);
+  transition: color 0.2s ease-out;
+}
+header .menu nav ul li a {
+  color: var(--grey);
+  padding: 24px;
+  display: block;
+  transition: color 0.2s ease-out;
+}
+header .menu nav ul li a:hover {
+  color: var(--red);
+}
+header .menu nav .smart-bar {
+  width: 0px;
+  height: 3px;
+  background-color: var(--grey);
+  transition: transform 0.2s ease-out, width 0.2s ease-out;
+  position: absolute;
+}
+header .menu .social-media {
+  display: flex;
+  gap: 8px;
+  padding: 0 1rem;
+}
+header .menu .social-media .social-media-item a {
+  background-color: #242424;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+header .menu .social-media .social-media-item a img {
+  display: flex;
+  width: 24px;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(0) invert(1);
+  position: relative;
+  left: 3px;
+  top: 3px;
+}
+.btn {
+  display: block;
+  background-color: #242424;
+  color: white;
+  padding: 8px 12px;
+  height: min-content;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  border: 1px solid #242424;
+}
+.btn:active {
+  background-color: #ebebeb;
+}
+.btn:hover {
+  color: #242424;
+  background-color: white;
+}
+.container {
+  background: #edeff3;
+  min-height: calc(100vh - 73px);
+  transition: all 0.2s;
+}
+.burger-menu {
+  display: none;
+  height: 30px;
+  margin: 25px;
+  position: relative;
+  width: 30px;
+}
+.burger-menu span {
+  background-color: #000;
+  display: block;
+  height: 4px;
+  margin: 0 auto;
+  position: relative;
+  top: 12px;
+  width: 30px;
+}
+.burger-menu span:before {
+  background-color: #000;
+  content: "";
+  display: block;
+  height: 4px;
+  margin-top: -9px;
+  position: absolute;
+  width: 30px;
+}
+.burger-menu span:after {
+  background-color: #000;
+  content: "";
+  display: block;
+  height: 4px;
+  margin-top: 9px;
+  position: absolute;
+  width: 30px;
+}
+@media (max-width: 880px) {
+  .burger-menu {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .burger-menu span {
+    -webkit-transition-delay: 0.2s;
+    -webkit-transition-duration: 0s;
+    transition-delay: 0.2s;
+    transition-duration: 0s;
+  }
+  .burger-menu span:before {
+    -webkit-transition-delay: 0.2s, 0s;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-property: margin, -webkit-transform;
+    transition-delay: 0.2s, 0s;
+    transition-duration: 0.2s;
+    transition-property: margin, transform;
+  }
+  .burger-menu span:after {
+    -webkit-transition-delay: 0.2s, 0s;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-property: margin, -webkit-transform;
+    transition-delay: 0.2s, 0s;
+    transition-duration: 0.2s;
+    transition-property: margin, transform;
+  }
+  .burger-menu:hover span:before {
+    margin-top: -12px;
+  }
+  .burger-menu:hover span:after {
+    margin-top: 12px;
+  }
+  .burger-menu.open span {
+    -webkit-transition-delay: 0.2s;
+    background-color: rgba(0, 0, 0, 0);
+    transition-delay: 0.2s;
+  }
+  .burger-menu.open span:before {
+    -webkit-transform: rotate(45deg);
+    -webkit-transition-delay: 0s, 0.2s;
+    margin-top: 0;
+    transform: rotate(45deg);
+    transition-delay: 0s, 0.2s;
+  }
+  .burger-menu.open span:after {
+    -webkit-transform: rotate(-45deg);
+    -webkit-transition-delay: 0s, 0.2s;
+    margin-top: 0;
+    transform: rotate(-45deg);
+    transition-delay: 0s, 0.2s;
+  }
+  header .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    background: white;
+  }
+  header .menu.active {
+    display: flex !important;
+    position: absolute !important;
+  }
+  header .menu nav {
+    width: 100%;
+  }
+  header .menu nav ul {
+    width: 100%;
+    position: initial;
+  }
+  header .menu nav ul li {
+    width: 100%;
+    padding: 0 !important;
+  }
+  header .menu nav ul li.current_page_item {
+    font-weight: bold;
+  }
+  header .menu nav ul li.current_page_item::after {
+    display: none;
+  }
+  header .menu nav ul li:hover {
+    background: #edeff3;
+  }
+  header .menu nav ul li a {
+    padding: 14px 0 !important;
+  }
+  header .menu nav .smart-bar {
+    display: none;
+  }
+  header .menu .btn {
+    margin: 8px 0;
+  }
+}
+footer {
+  background-color: #242424;
+  display: flex;
+  color: white;
+  justify-content: center;
+  padding: 1rem;
+  gap: 2rem;
+}
+footer h3,
+footer p {
+  margin-bottom: 4px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+.copyright {
+  background-color: #242424;
+  display: flex;
+  justify-content: center;
+}
+.copyright p {
+  text-align: center;
+  color: white;
+  width: 50%;
+  border-top: 1px solid #797979;
+  padding: 1rem;
+}
+@media screen and (max-width: 630px) {
+  footer {
+    flex-direction: column !important;
+  }
+  footer h3,
+  footer p {
+    text-align: center;
+  }
+  .copyright p {
+    width: 90%;
+  }
+}

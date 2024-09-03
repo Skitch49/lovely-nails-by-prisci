@@ -1,0 +1,28 @@
+.container-post {
+  background-color: #edeff3;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 90vh;
+}
+.container-post h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.container-post .wrapper-content {
+  display: flex;
+  justify-content: center;
+}
+.container-post .wrapper-content .content {
+  width: 80%;
+}
+.container-post .wrapper-content .content * {
+  margin-bottom: 1rem;
+  list-style: disc !important;
+}
+.container-post .wrapper-content .content ol, .container-post .wrapper-content .content ul {
+  padding-left: 2rem;
+}
+.container-post .wrapper-content .content a {
+  color: black;
+}

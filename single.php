@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/single.scss" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/single.css" />
 <div class="container-pink"></div>
 <div class="container-post">
     <?php if (have_posts()) : ?>

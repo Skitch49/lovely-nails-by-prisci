@@ -7,8 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/9db862ff9d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/style.scss" />
+    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/style.css" />
+    <link rel="icon" href="favicon.ico" />
+
 
     <?php wp_head() ?>
 </head>

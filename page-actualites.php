@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/home.scss" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/home.css" />
 
 
 <!--Partie Actualites-->

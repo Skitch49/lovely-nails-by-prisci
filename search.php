@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/home.scss" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/home.css" />
 <?php
 $s = get_search_query();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -56,11 +56,6 @@ $the_query = new WP_Query($args); ?>
                     </li>
                 <?php
                 } ?>
-                <?php /* Problème pagination page n+1 = erreur 404 / solution afficher 30 derniers articles avec mot clé
-                <div class="container-pagination">
-                    <div class="nav-previous pagination-link"><?php previous_posts_link('< Précédent'); ?></div>
-                    <div class="nav-next pagination-link"><?php next_posts_link('Suivant >'); ?></div>
-                </div>  */ ?>
             <?php
             } else {
             ?>

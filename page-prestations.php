@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/prestations.scss" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/prestations.css" />
 
 <div class="container">
     <h1>Voici l'ensemble de nos prestations</h1>

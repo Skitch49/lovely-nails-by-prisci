@@ -1,5 +1,7 @@
-<?php get_header() ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/contact.scss" />
+<?php
+session_start();
+get_header(); ?>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/contact.css" />
 
 <div class="container-contact">
     <figure>
@@ -32,6 +34,24 @@
 
 
             </form>
+            <?php
+            if (isset($_SESSION['message'])) {
+                if ($_SESSION['message'] == 'ok') {
+                    echo '<div id="msg_envoie">'
+                        . '<p>Votre message a bien été envoyé.</p>'
+                        . '</div>';
+                    $_SESSION['message'] = '';
+                }
+                if ($_SESSION['message'] == 'erreur') {
+                    echo '<div id="msg_erreur">'
+                        . '<p>Message non envoyé !<br>Une erreur est survenu</p>'
+                        . '</div>';
+                    $_SESSION['message'] = '';
+                }
+                wp_redirect($_SERVER['REQUEST_URI']);
+                exit;
+            }
+            ?>
         </div>
     </div>
 
@@ -66,10 +86,6 @@ if (isset($_POST['nom']) and !empty($_POST['nom']) and isset($_POST['prenom']) a
 
         $to  = 'alexisdu492@gmail.com';
 
-
-        /*$headers = 'From: contact@angersloirecampus.fr' . "\r\n" .
-            'Reply-To:'. $_POST['mail'] . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();*/
         date_default_timezone_set("Europe/Paris");
 
         $sujet = 'Contact Site web ' . $_POST['email'] . date("h:i:sa");
@@ -83,23 +99,17 @@ if (isset($_POST['nom']) and !empty($_POST['nom']) and isset($_POST['prenom']) a
                 "\r\n\r\nCe mail est envoyer à la suite d'une prise de contact sur le site web."
         );
         $headers = array(
-            'From: Lovely Nail\'s by Prisci <contact@lovelynails.fr>',
+            'From: Lovely Nail\'s by Prisci <contact@lovely-nails-by-prisci.fr>',
             'Reply-To: <' . $_POST['email'] . '>',
         );
         $retour = wp_mail($to, $sujet, $msg, $headers);
         if ($retour) {
-            echo '<div id="msg_envoie">'
-                . '<p>Votre message a bien été envoyé.</p>'
-                . '</div>';
+            $_SESSION['message'] = 'ok';
         } else {
-            echo '<div id="msg_erreur">'
-                . '<p>Gros bug</p>'
-                . '</div>';
+            $_SESSION['message'] = 'erreur';
         }
     } else {
-        echo '<div id="msg_erreur">'
-            . '<p>Message non envoyé !<br>Champs non saisie 1.</p>'
-            . '</div>';
+        $_SESSION['message'] = 'erreur';
     }
 }
 ?>

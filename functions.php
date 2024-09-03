@@ -34,13 +34,16 @@ function mytheme_custom_excerpt_length($length)
 }
 add_filter('excerpt_length', 'mytheme_custom_excerpt_length', 999);
     
-// // SMTP email settings
-// define('SMTP_username', 'api');  // host username
-// define('SMTP_password', 'your-mailtrap-smtp-password');   // Mailtrap SMTP password
-// define('SMTP_server', 'live.smtp.mailtrap.io');     // SMTP server address
-// define('SMTP_FROM', 'youremail@example.com');   // Your Email Address
-// define('SMTP_NAME', 'Your Name');   //  Business From Name
-// define('SMTP_PORT', '587');     // Server Port Number
-// define('SMTP_SECURE', 'tls');   // Encryption - ssl or tls (recommended)
-// define('SMTP_AUTH', true);  // Use SMTP authentication (true|false)
-// define('SMTP_DEBUG',   0);  // for debugging purposes only
+
+add_action( 'phpmailer_init', 'configurer_smtp' );
+function configurer_smtp( $phpmailer ) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host = SMTP_HOST; // Remplacez par votre hôte SMTP
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Port = SMTP_PORT; // Modifiez-le en fonction des exigences de votre serveur SMTP
+    $phpmailer->Username = SMTP_USERNAME; // Remplacez par votre nom d'utilisateur SMTP
+    $phpmailer->Password = SMTP_PASSWORD; // Remplacez par votre mot de passe SMTP
+    $phpmailer->SMTPSecure = SMTP_SECURE; // Modifiez-le en fonction des exigences de votre serveur SMTP. Il peut s'agit également de 'ssl'.
+    $phpmailer->From = SMTP_FROM; // Remplacez par votre adresse e-mail
+    $phpmailer->FromName = SMTP_FROM_NAME; // Remplacez par votre nom
+}

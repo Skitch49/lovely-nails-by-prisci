@@ -1,0 +1,100 @@
+.container {
+  padding: 0 3rem;
+  padding-bottom: 2rem;
+}
+.container h1 {
+  padding: 8px 0;
+  width: 50%;
+  text-align: center;
+  transition: all 0.2s;
+}
+.container section {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+.container section .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.container section .content h2 {
+  margin-bottom: 1rem;
+}
+.container section .content ul {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.container section .content ul .content-item,
+.container section .content ul .time,
+.container section .content ul .price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.container section .content ul .content-item li,
+.container section .content ul .time li,
+.container section .content ul .price li {
+  list-style: none;
+  flex: 1;
+}
+.container section .content ul .content-item p,
+.container section .content ul .time p,
+.container section .content ul .price p {
+  margin: 0 8px;
+}
+.container section .content .btn {
+  margin-top: 1.5rem;
+}
+.container section figure {
+  flex: 1;
+  width: 100%;
+  height: 500px;
+}
+.container section figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 !important;
+  }
+  .container h1 {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .content figure {
+    height: 100% !important;
+  }
+  .content figure img {
+    max-height: 500px !important;
+  }
+}
+@media screen and (max-width: 750px) {
+  .content-top {
+    flex-direction: column-reverse !important;
+  }
+  .content-down {
+    flex-direction: column !important;
+  }
+  section {
+    margin-bottom: 1rem;
+  }
+  section:nth-last-child(1) {
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+  }
+  .content {
+    margin: 1rem 0;
+  }
+  .container h1 {
+    font-size: clamp(25px, 4vw, 40px) !important;
+    padding: 8px !important;
+  }
+}

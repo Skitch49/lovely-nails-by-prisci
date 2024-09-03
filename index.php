@@ -215,47 +215,47 @@
             <div class="swiper swiper-bougie">
                 <div class="swiper-wrapper">
                     <?php if (get_field('image_bougie_1')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_1'); ?>" alt="<?php pathinfo('image_bougie_1'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_1'); ?>" alt="<?php pathinfo('image_bougie_1'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_1'); ?></p>
                         </div>
                     <?php endif; ?>
                     <?php if (get_field('image_bougie_2')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_2'); ?>" alt="<?php pathinfo('image_bougie_2'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_2'); ?>" alt="<?php pathinfo('image_bougie_2'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_2'); ?></p>
                         </div>
                     <?php endif; ?>
                     <?php if (get_field('image_bougie_3')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_3'); ?>" alt="<?php pathinfo('image_bougie_3'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_3'); ?>" alt="<?php pathinfo('image_bougie_3'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_3'); ?></p>
                         </div>
                     <?php endif; ?>
                     <?php if (get_field('image_bougie_4')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_4'); ?>" alt="<?php pathinfo('image_bougie_4'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_4'); ?>" alt="<?php pathinfo('image_bougie_4'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_4'); ?></p>
                         </div>
                     <?php endif; ?>
                     <?php if (get_field('image_bougie_5')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_5'); ?>" alt="<?php pathinfo('image_bougie_5'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_5'); ?>" alt="<?php pathinfo('image_bougie_5'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_5'); ?></p>
                         </div>
                     <?php endif; ?>
                     <?php if (get_field('image_bougie_6')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_6'); ?>" alt="<?php pathinfo('image_bougie_6'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_6'); ?>" alt="<?php pathinfo('image_bougie_6'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_6'); ?></p>
                         </div>
                     <?php endif; ?>
                     <?php if (get_field('image_bougie_7')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_7'); ?>" alt="<?php pathinfo('image_bougie_7'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_7'); ?>" alt="<?php pathinfo('image_bougie_7'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_7'); ?></p>
                         </div>
                     <?php endif; ?>
                     <?php if (get_field('image_bougie_8')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_8'); ?>" alt="<?php pathinfo('image_bougie_8'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_8'); ?>" alt="<?php pathinfo('image_bougie_8'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_8'); ?></p>
                         </div>
                     <?php endif; ?>
                     <?php if (get_field('image_bougie_9')) : ?>
-                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_9'); ?>" alt="<?php pathinfo('image_bougie_9'); ?>" loading="lazy">
+                        <div class="swiper-slide"><img src="<?= the_field('image_bougie_9'); ?>" alt="<?php pathinfo('image_bougie_9'); ?>">
                             <p class="name-card"><?= the_field('titre_bougie_9'); ?></p>
                         </div>
                     <?php endif; ?>
@@ -271,70 +271,42 @@
 
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script>
-    const swiper = new Swiper(".swiper-galerie", {
-        navigation: {
-            nextEl: ".swiper-button-next-1",
-            prevEl: ".swiper-button-prev-1",
-        },
-        slidesPerView: 4,
-        grid: {
-            rows: 2,
-        },
-        spaceBetween: 20,
-        breakpoints: {},
-        loop: true,
-        speed: 1200,
-
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true,
-            waitForTransition: true,
-        }
-    });
-
-    window.addEventListener('load', function() {
-        requestAnimationFrame(() => {
-            const swiper2 = new Swiper(".swiper-bougie", {
-                effect: "cards",
-                grabCursor: true,
-                keyboard: {
-                    enabled: true,
-                    onlyInViewport: false,
-                },
-                speed: 600,
-                lazy: true,
-
-                autoplay: {
-                    delay: 2000,
-                    disableOnInteraction: true,
-                    pauseOnMouseEnter: true,
-                    waitForTransition: true,
-                },
-            });
-        });
-    });
-
-
-
-    const swiper3 = new Swiper(".swiper-actu", {
-        spaceBetween: 30,
-        pagination: {
-            el: ".my-custom-pagination-div",
-            clickable: true,
-            renderBullet: (index, className) => {
-                return '<span class="' + className + '">' + (index + 1) + "</span>";
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiperBougie = new Swiper(".swiper-bougie", {
+            effect: "cards",
+            grabCursor: true,
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
             },
-        },
-        autoplay: {
-            delay: 4200,
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true,
-            waitForTransition: true,
-        },
-        loop: true,
+            speed: 600,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: true,
+                pauseOnMouseEnter: true,
+                waitForTransition: true,
+            },
+        });
+
+        const swiperActu = new Swiper(".swiper-actu", {
+            spaceBetween: 30,
+            pagination: {
+                el: ".my-custom-pagination-div",
+                clickable: true,
+                renderBullet: (index, className) => {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            },
+            autoplay: {
+                delay: 4200,
+                disableOnInteraction: true,
+                pauseOnMouseEnter: true,
+                waitForTransition: true,
+            },
+            loop: true,
+        });
     });
 </script>
 <?php get_footer() ?>

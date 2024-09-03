@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/page.scss" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/page.css" />
 <div class="container-post">
     <?php the_title('<h1 class="post-title">', '</h1>'); ?>
     <div class="wrapper-content">
